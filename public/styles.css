@@ -458,7 +458,7 @@ select {
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 22;
+  z-index: 30;
   background-color: #575757;
   padding: 20px;
   border-radius: 10px;
