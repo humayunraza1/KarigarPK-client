@@ -8,7 +8,7 @@ import MuiAlert from "@mui/material/Alert";
 import { green } from "@mui/material/colors";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-
+import Notification from "./notification";
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -22,6 +22,8 @@ function Address(props) {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [status, setStatus] = useState("");
   const timer = useRef();
 
   const buttonSx = {
@@ -66,14 +68,18 @@ function Address(props) {
     const dropdown = document.querySelector(".deliverLocation");
     const selectedOption = dropdown.options[dropdown.selectedIndex].value;
     if (selectedOption === "not") {
-      alert("Please Select Valid Option To Calculate Delivery Charges");
+      setMsg("Please select valid option to calculate delivery charges.");
+      setStatus("error");
+      setShow(true);
     } else if (
       name === "" ||
       phone.toString().length < 11 ||
       !email.includes("@" && ".com") ||
       address === ""
     ) {
-      alert("Invalid Field Entry");
+      setMsg("Invalid field entry!!");
+      setStatus("error");
+      setShow(true);
     } else {
       if (!loading) {
         setSuccess(false);
@@ -99,8 +105,13 @@ function Address(props) {
 
       if (data.status === 401 || !data) {
         console.log("error");
+        setLoading(false);
       } else {
         console.log("email sent");
+        setStatus("success");
+        setMsg(
+          "Order placed successfuly. Check your email for Payment Details."
+        );
         setShow(true);
         setSuccess(true);
         setLoading(false);
@@ -113,25 +124,7 @@ function Address(props) {
 
   return (
     <>
-      {show && (
-        <Snackbar
-          open={true}
-          autoHideDuration={2000}
-          onClose={() => setShow(false)}
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "center",
-          }}
-        >
-          <Alert
-            onClose={() => setShow(false)}
-            severity="success"
-            sx={{ width: "100%" }}
-          >
-            Your Order Has Been Placed
-          </Alert>
-        </Snackbar>
-      )}
+      {show && <Notification msg={msg} status={status} />}
       <div
         className="personalInfo-container"
         style={{ display: props.isVisible ? "block" : "none" }}

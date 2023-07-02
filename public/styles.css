@@ -455,7 +455,7 @@ select {
 }
 
 .personalInfo-container {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   z-index: 30;
@@ -658,4 +658,11 @@ footer {
   color: white;
   font-size: 11.1px;
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .personalInfo-container {
+    width: 100%;
+    height: 100%;
+  }
 }

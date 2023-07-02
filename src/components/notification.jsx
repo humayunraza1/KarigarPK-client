@@ -8,22 +8,23 @@ const Alert = forwardRef(function Alert(props, ref) {
 });
 
 function Notification(props) {
-  const [open, setOpen] = useState(false);
-
-  setOpen(props.setOpen);
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
-
+  const [show, setShow] = useState(true);
   return (
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-        {props.Product.Title} added to cart.
+    <Snackbar
+      open={show}
+      autoHideDuration={2000}
+      onClose={() => setShow(false)}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "center",
+      }}
+    >
+      <Alert
+        onClose={() => setShow(false)}
+        severity={props.status}
+        sx={{ width: "100%" }}
+      >
+        {props.msg}
       </Alert>
     </Snackbar>
   );

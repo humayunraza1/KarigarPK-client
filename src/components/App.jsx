@@ -11,7 +11,7 @@ import Overlay from "./overlay";
 import Footer from "./footer";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-
+import Notification from "./notification";
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -21,6 +21,7 @@ function App() {
   const [isCartVis, setCartVis] = useState(false);
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("");
+  const [show, setShow] = useState(false);
   const [notiMsg, setNotiMsg] = useState("");
 
   function addToCart(item) {
@@ -28,6 +29,10 @@ function App() {
     if (cart.length === 0) {
       setStatus("success");
       setNotiMsg(`${item.Title} added to cart.`);
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
       return setCart((prevCart) => {
         return [
           ...prevCart,
@@ -50,6 +55,10 @@ function App() {
         if (product.Quantity + 1 <= item.Stock) {
           setStatus("success");
           setNotiMsg(`${product.Title} added to cart.`);
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1000);
           console.log("same item added: ", product.Title);
           console.log("same item added: ", product.Quantity);
           const newList = {
@@ -66,11 +75,19 @@ function App() {
         } else {
           setStatus("error");
           setNotiMsg(`Cannot add more ${product.Title}.`);
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1000);
         }
       } else {
         return setCart((prevCart) => {
           setStatus("success");
           setNotiMsg(`${item.Title} added to cart.`);
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1000);
           return [
             ...prevCart,
             {
@@ -112,13 +129,23 @@ function App() {
       };
     });
     finalOrders = [...orders, { Total: totalPrice }];
-    cart.length === 0 ? alert("Nothing in cart") : setCheckOut(true);
+    if (cart.length === 0) {
+      setStatus("error");
+      setNotiMsg("Cart Is Empty.");
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+    } else {
+      setCheckOut(true);
+    }
     console.log(finalOrders);
   }
 
   let totalPrice = 0;
   return (
     <>
+      {show && <Notification msg={notiMsg} status={status} />}
       <div>
         <Overlay onCheckout={isCheckedOut} />
         <Header />
@@ -162,11 +189,6 @@ function App() {
           />
         </section>
         <Footer />
-        <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity={status} sx={{ width: "100%" }}>
-            {notiMsg}
-          </Alert>
-        </Snackbar>
       </div>
     </>
   );
