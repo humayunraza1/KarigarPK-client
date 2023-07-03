@@ -1,6 +1,6 @@
 import React from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-
+import { grey } from "@mui/material/colors";
 function Card(props) {
   return (
     <div className="card">
@@ -16,7 +16,7 @@ function Card(props) {
             </div>
             <div className="btn">
               <button onClick={() => props.Cart(props)}>
-                <AddShoppingCartIcon />
+                <AddShoppingCartIcon sx={{ color: "#f5f5f5" }} />
               </button>
             </div>
           </div>

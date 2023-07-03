@@ -25,7 +25,7 @@ function Search({ cartLength, isCartOpen, onCart }) {
       <div className="searchEngine">
         <div className="input-wrapper">
           <SearchIcon sx={{ fontSize: 27, color: blue[900] }} />
-          <input placeholder="Viper Mini Grip" onChange={handleChange}></input>
+          <input placeholder="Search..." onChange={handleChange}></input>
         </div>
         <SearchResult results={results} onCart={onCart} />
       </div>

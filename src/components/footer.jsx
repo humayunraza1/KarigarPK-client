@@ -27,7 +27,7 @@ function Footer() {
             <div className="vertical-bar"></div>
           </li>
           <li>
-            <a href="#">
+            <a>
               <i>
                 <svg
                   id="Layer_1"
@@ -47,7 +47,7 @@ function Footer() {
         </ul>
         <div className="footer-bottom">
           <p>
-            copyright &copy;{year} <a href="#">KarigarPK</a>
+            copyright &copy;{year} <a>KarigarPK</a>
           </p>
         </div>
       </div>
