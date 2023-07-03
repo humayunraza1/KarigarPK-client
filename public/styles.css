@@ -662,7 +662,7 @@ footer {
 
 @media screen and (max-width: 600px) {
   .personalInfo-container {
-    width: 96%;
-    height: 98%;
+    width: 90%;
+    height: 100%;
   }
 }
