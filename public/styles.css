@@ -40,6 +40,7 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 50px;
+  column-gap: 50px;
 }
 
 .store-container {
@@ -49,7 +50,7 @@ header {
 }
 .container {
   position: relative;
-  width: 400px;
+  width: auto;
 }
 
 .container .card {
