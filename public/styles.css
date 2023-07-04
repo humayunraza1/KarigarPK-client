@@ -37,7 +37,7 @@ header {
   height: auto;
   width: auto;
   padding: 20px;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   row-gap: 50px;
   column-gap: 50px;
@@ -531,6 +531,8 @@ select {
   .tools-container input {
     width: 300px;
   }
+}
+@media screen and (max-width: 1690px) {
   .item-container {
     justify-content: center;
   }
@@ -567,6 +569,8 @@ footer {
   width: 100vw;
   padding-top: 20px;
   color: #fff;
+  position: relative;
+  top: 100%;
 }
 
 .footer-content {
