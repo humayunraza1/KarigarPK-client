@@ -73,6 +73,7 @@ header {
   background: #ffce00;
   transform: skewY(345deg);
   transition: 0.5s;
+  z-index: 2;
 }
 
 .container .card:hover::before {

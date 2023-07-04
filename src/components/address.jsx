@@ -85,7 +85,7 @@ function Address(props) {
         setSuccess(false);
         setLoading(true);
       }
-      const res = await fetch("/order", {
+      const res = await fetch("https://karigarpk-server.onrender.com/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
