@@ -9,107 +9,15 @@ import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
 import Overlay from "./overlay";
 import Footer from "./footer";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 import Notification from "./notification";
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import ItemDetail from "./itemDetails";
 
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartVis, setCartVis] = useState(false);
-  const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("");
   const [show, setShow] = useState(false);
   const [notiMsg, setNotiMsg] = useState("");
-
-  function addToCart(item) {
-    setOpen(true);
-    if (cart.length === 0) {
-      setStatus("success");
-      setNotiMsg(`${item.Title} added to cart.`);
-      setShow(true);
-      setTimeout(() => {
-        setShow(false);
-      }, 1000);
-      return setCart((prevCart) => {
-        return [
-          ...prevCart,
-          {
-            _id: item._id,
-            Title: item.Title,
-            Price: item.Price,
-            Image: item.ImageURL,
-            Quantity: 1,
-          },
-        ];
-      });
-    } else {
-      const existingIndex = cart.findIndex(
-        (product) => product._id === item._id
-      );
-
-      if (existingIndex >= 0) {
-        const product = cart[existingIndex];
-        if (product.Quantity + 1 <= item.Stock) {
-          setStatus("success");
-          setNotiMsg(`${product.Title} added to cart.`);
-          setShow(true);
-          setTimeout(() => {
-            setShow(false);
-          }, 1000);
-          console.log("same item added: ", product.Title);
-          console.log("same item added: ", product.Quantity);
-          const newList = {
-            _id: product._id,
-            Title: product.Title,
-            Price: product.Price + item.Price,
-            Image: product.Image,
-            Quantity: product.Quantity + 1,
-          };
-          const newArr = cart.map((i, index) => {
-            return index === existingIndex ? newList : i;
-          });
-          return setCart(newArr);
-        } else {
-          setStatus("error");
-          setNotiMsg(`Cannot add more ${product.Title}.`);
-          setShow(true);
-          setTimeout(() => {
-            setShow(false);
-          }, 1000);
-        }
-      } else {
-        return setCart((prevCart) => {
-          setStatus("success");
-          setNotiMsg(`${item.Title} added to cart.`);
-          setShow(true);
-          setTimeout(() => {
-            setShow(false);
-          }, 1000);
-          return [
-            ...prevCart,
-            {
-              _id: item._id,
-              Title: item.Title,
-              Price: item.Price,
-              Image: item.ImageURL,
-              Quantity: 1,
-            },
-          ];
-        });
-      }
-    }
-  }
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
 
   function delItem(id) {
     setCart((prevCart) => {
@@ -143,19 +51,197 @@ function App() {
   }
 
   let totalPrice = 0;
+  const [info, setInfo] = useState("");
+  const [modal, setModal] = useState(false);
+  function openModal(i) {
+    console.log(i);
+    setInfo(i);
+    setModal(!modal);
+  }
+
+  function customaCart(c) {
+    if (cart.length === 0) {
+      setStatus("success");
+      setNotiMsg(`${c}x ${info.Title} added to cart.`);
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+      setModal(false);
+      return setCart((prevCart) => {
+        return [
+          ...prevCart,
+          {
+            _id: info._id,
+            Title: info.Title,
+            sPrice: info.Price,
+            Price: info.Price * c,
+            Image: info.ImageURL,
+            Quantity: c,
+            Stock: info.Stock,
+          },
+        ];
+      });
+    } else {
+      const existingIndex = cart.findIndex(
+        (product) => product._id === info._id
+      );
+
+      if (existingIndex >= 0) {
+        const product = cart[existingIndex];
+        if (product.Quantity + c <= info.Stock) {
+          setStatus("success");
+          setNotiMsg(`${c}x ${product.Title} added to cart.`);
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1000);
+          setModal(false);
+          console.log("same item added: ", product.Title);
+          console.log("same item added: ", product.Quantity);
+          const newList = {
+            _id: product._id,
+            Title: product.Title,
+            Price: product.Price + info.Price * c,
+            Image: product.Image,
+            sPrice: info.Price,
+            Quantity: product.Quantity + c,
+            Stock: product.Stock,
+          };
+          const newArr = cart.map((i, index) => {
+            return index === existingIndex ? newList : i;
+          });
+          return setCart(newArr);
+        } else {
+          setStatus("error");
+          setNotiMsg(`Cannot add more ${product.Title}.`);
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1000);
+        }
+      } else {
+        return setCart((prevCart) => {
+          setStatus("success");
+          setNotiMsg(`${c}x ${info.Title} added to cart.`);
+          setShow(true);
+          setTimeout(() => {
+            setShow(false);
+          }, 1000);
+          setModal(false);
+          return [
+            ...prevCart,
+            {
+              _id: info._id,
+              Title: info.Title,
+              sPrice: info.Price,
+              Price: info.Price * c,
+              Image: info.ImageURL,
+              Quantity: c,
+              Stock: info.Stock,
+            },
+          ];
+        });
+      }
+    }
+  }
+
+  // Increasing Quantity from Cart
+  function increaseQty(id) {
+    const existingIndex = cart.findIndex((product) => product._id === id);
+    const product = cart[existingIndex];
+    if (product.Quantity + 1 <= product.Stock) {
+      const newList = {
+        _id: product._id,
+        Title: product.Title,
+        sPrice: product.sPrice,
+        Price: product.Price + product.sPrice,
+        Image: product.Image,
+        Quantity: product.Quantity + 1,
+        Stock: product.Stock,
+      };
+
+      const newArr = cart.map((i, index) => {
+        return index === existingIndex ? newList : i;
+      });
+      setStatus("success");
+      setNotiMsg(`${1}x ${product.Title} added to cart.`);
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+      return setCart(newArr);
+    } else {
+      setStatus("error");
+      setNotiMsg(`Qty limit for ${product.Title} reached.`);
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+      return cart;
+    }
+  }
+
+  function decreaseQty(id) {
+    const existingIndex = cart.findIndex((product) => product._id === id);
+    const product = cart[existingIndex];
+
+    if (product.Quantity - 1 >= 1) {
+      const newList = {
+        _id: product._id,
+        Title: product.Title,
+        sPrice: product.sPrice,
+        Price: product.Price - product.sPrice,
+        Image: product.Image,
+        Quantity: product.Quantity - 1,
+        Stock: product.Stock,
+      };
+
+      const newArr = cart.map((i, index) => {
+        return index === existingIndex ? newList : i;
+      });
+      setStatus("success");
+      setNotiMsg(`${1}x ${product.Title} removed from cart.`);
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+      return setCart(newArr);
+    } else {
+      const newArr = cart.filter((i, index) => {
+        return index !== existingIndex;
+      });
+
+      setStatus("error");
+      setNotiMsg(`${product.Title} removed from cart`);
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+      return setCart(newArr);
+    }
+  }
   return (
     <>
       {show && <Notification msg={notiMsg} status={status} />}
       <div>
-        <Overlay onCheckout={isCheckedOut} />
+        {isCheckedOut && <Overlay />}
         <Header />
         <div>
           <Search
             cartLength={cart.length}
             isCartOpen={setCartVis}
-            onCart={addToCart}
+            onCart={openModal}
           />
         </div>
+        {modal && <Overlay />}
+        {modal && (
+          <ItemDetail
+            isClicked={openModal}
+            moreInfo={info}
+            addToCart={customaCart}
+          />
+        )}
         <div className={isCartVis ? "notEmpty" : "cart"}>
           <div className="close-cart">
             <button onClick={() => setCartVis(false)}>
@@ -169,11 +255,15 @@ function App() {
                 <Cart
                   key={index}
                   id={index}
+                  _id={cartItem._id}
+                  Stock={cartItem.Stock}
                   onDelete={delItem}
                   ImageURL={cartItem.Image}
                   Qty={cartItem.Quantity}
                   Title={cartItem.Title}
                   PriceTag={cartItem.Price}
+                  decrease={decreaseQty}
+                  increase={increaseQty}
                 />
               );
             })}
@@ -181,7 +271,7 @@ function App() {
           <Total Total={totalPrice} onCheckout={placeOrder} />
         </div>
         <section className="store-container">
-          <Store onCart={addToCart} />
+          <Store isClicked={openModal} />
           <Address
             Summary={cart}
             isVisible={isCheckedOut}

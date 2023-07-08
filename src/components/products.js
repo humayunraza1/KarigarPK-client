@@ -2,14 +2,17 @@ const products = [
   {
     _id: 1,
     Title: "Viper Mini Grip",
+    Variant: "White Printstream",
     Price: 800,
-    Stock: 0,
+    Stock: 2,
     ImageURL:
       "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    Description: "Viper Mini Grip made from Anti Slip and Anti Sweat material.",
   },
   {
     _id: 2,
     Title: "GPW/GPXS Grip",
+    Variant: "White Printstream",
     Price: 800,
     Stock: 3,
     ImageURL:
@@ -22,14 +25,16 @@ const products = [
     Stock: 6,
     ImageURL:
       "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    Description: "PTFE Skates, best for replacement",
   },
   {
     _id: 4,
     Title: "GPXS Skates",
     Price: 600,
-    Stock: 4,
+    Stock: 0,
     ImageURL:
       "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    Description: "PTFE Skates, best for replacement",
   },
   {
     _id: 5,
@@ -38,6 +43,7 @@ const products = [
     Stock: 4,
     ImageURL:
       "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    Description: "PTFE Skates, best for replacement",
   },
 ];
 

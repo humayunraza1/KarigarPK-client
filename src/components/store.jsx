@@ -13,8 +13,9 @@ function Store(props) {
               itemName={product.Title}
               Price={product.Price}
               Image={product.ImageURL}
-              Cart={() => props.onCart(product)}
+              // Cart={() => props.onCart(product)}
               Stock={product.Stock}
+              isClicked={() => props.isClicked(product)}
             />
           </div>
         );

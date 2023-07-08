@@ -1,9 +1,7 @@
 import React from "react";
 
-
-function Overlay(props){
-
-    return <div className={props.onCheckout ? "overlay":"overlay-none"}></div>
+function Overlay(props) {
+  return <div className="overlay"></div>;
 }
 
 export default Overlay;

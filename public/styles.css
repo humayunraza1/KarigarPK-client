@@ -163,6 +163,13 @@ header {
   visibility: hidden;
 }
 
+.container .card-content .contentBx .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .container .card-content:hover .contentBx .price,
 .container .card-content:hover .contentBx .btn {
   opacity: 1;
@@ -180,7 +187,7 @@ header {
   width: 100%;
   height: 100%;
   opacity: 0.2;
-  z-index: 18;
+  z-index: 20;
   pointer-events: none;
   background-color: #575757;
 }
@@ -188,7 +195,8 @@ header {
 .container .card .OOS-overlay::after {
   position: absolute;
   color: white;
-  z-index: 18;
+  z-index: 20;
+  pointer-events: none;
   top: 35%;
   font-weight: bolder;
   left: 50%;
@@ -692,4 +700,135 @@ footer {
     width: 90%;
     height: 100%;
   }
+}
+
+.modal-container {
+  position: absolute;
+  z-index: 30;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+
+#modal {
+  border-radius: 9px;
+  position: relative;
+  padding: 20px;
+  background-color: #111;
+}
+
+#modal .content {
+  z-index: 11;
+  position: relative;
+  background-color: #111;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+  color: white;
+}
+#modal .close-modal {
+  z-index: 11;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+#modal::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #ffce00;
+  transform: skewY(345deg);
+  z-index: 1;
+}
+
+#modal .content img {
+  width: 250px;
+}
+
+.AOC-container .setQuantity .change-Qty {
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+  background-color: #ffce00;
+  margin: 5px;
+  text-align: center;
+}
+
+.AOC-container .setQuantity button {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-style: none;
+}
+
+.AOC-container .setQuantity button:hover {
+  cursor: pointer;
+  background-color: #e7ba07;
+}
+
+.AOC-container .setQuantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.AOC-container {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+
+.AOC-container .AOC-btn {
+  background-color: #ffce00;
+  border-radius: 8px;
+  height: 35px;
+  width: 110px;
+  border-style: none;
+}
+
+.AOC-container .AOC-btn:hover {
+  cursor: pointer;
+  background-color: #e7ba07;
+}
+
+.setQty-Cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #7c7c7c;
+  border-radius: 8px;
+  color: white;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.setQty-Cart .changeQty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.setQty-Cart .changeQty button {
+  margin: 6px;
+  background-color: #ffce00;
+  border-radius: 100%;
+  border-style: none;
+  font-size: 18px;
+  width: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+}
+
+.setQty-Cart .changeQty button:hover {
+  cursor: pointer;
+  background-color: #e7ba07;
 }
