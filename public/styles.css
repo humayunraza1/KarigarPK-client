@@ -153,14 +153,20 @@ header {
   font-weight: 600;
   letter-spacing: 1px;
   color: white;
+  margin-bottom: 0;
 }
 
 .container .card-content .contentBx .price,
-.container .card-content .contentBx .btn {
+.container .card-content .contentBx .btn,
+.container .card-content .contentBx .Var {
   transition: 0.5s;
   opacity: 0;
   color: white;
   visibility: hidden;
+}
+
+.container .card-content .contentBx .Var {
+  color: rgb(163, 163, 163);
 }
 
 .container .card-content .contentBx .price {
@@ -170,8 +176,15 @@ header {
   justify-content: center;
 }
 
+.container .card-content .contentBx .price h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 0;
+}
+
 .container .card-content:hover .contentBx .price,
-.container .card-content:hover .contentBx .btn {
+.container .card-content:hover .contentBx .btn,
+.container .card-content:hover .contentBx .Var {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.4s;

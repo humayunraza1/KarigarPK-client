@@ -21,6 +21,7 @@ function Store(props) {
           <Card
             id={product._id}
             itemName={product.Title}
+            var={product.Variant}
             Price={product.Price}
             Image={product.ImageURL}
             Stock={product.Stock}

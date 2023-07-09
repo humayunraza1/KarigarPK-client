@@ -10,6 +10,9 @@ function Card(props) {
           </div>
           <div className="contentBx">
             <h2>{props.itemName}</h2>
+            <div className="Var">
+              <span>{props.var}</span>
+            </div>
             <div className="price">
               <h2 value={props.Price}>{props.Price}</h2>
               <h2>rs</h2>
