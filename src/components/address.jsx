@@ -43,6 +43,7 @@ function Address(props) {
     return {
       Name: item.Title,
       Qty: item.Quantity,
+      Var: item.Variant,
       Cost: item.Price,
     };
   });
@@ -80,7 +81,7 @@ function Address(props) {
         setSuccess(false);
         setLoading(true);
       }
-      const res = await fetch("https://karigarpk-server.onrender.com/order", {
+      const res = await fetch("http://karigarpk-server.onrender.com/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -194,7 +195,10 @@ function Address(props) {
                 return (
                   <tr>
                     <td>{order.Qty}x</td>
-                    <td className="center-column">{order.Name}</td>
+                    <td className="center-column">
+                      {order.Name} <br></br>{" "}
+                      <span className="Var">{order.Var}</span>
+                    </td>
                     <td>{order.Cost}</td>
                   </tr>
                 );

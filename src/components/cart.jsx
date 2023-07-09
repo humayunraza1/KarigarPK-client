@@ -23,6 +23,7 @@ function Cart(props) {
       </div>
       <div className="cartTitle">
         <h4>{props.Title}</h4>
+        <span>{props.Variant}</span>
       </div>
       <div>
         <p>{props.PriceTag}Rs</p>

@@ -75,6 +75,7 @@ function App() {
             _id: info._id,
             Title: info.Title,
             sPrice: info.Price,
+            Variant: info.Variant,
             Price: info.Price * c,
             Image: info.ImageURL,
             Quantity: c,
@@ -102,6 +103,7 @@ function App() {
           const newList = {
             _id: product._id,
             Title: product.Title,
+            Variant: product.Variant,
             Price: product.Price + info.Price * c,
             Image: product.Image,
             sPrice: info.Price,
@@ -135,6 +137,7 @@ function App() {
               _id: info._id,
               Title: info.Title,
               sPrice: info.Price,
+              Variant: info.Variant,
               Price: info.Price * c,
               Image: info.ImageURL,
               Quantity: c,
@@ -155,6 +158,7 @@ function App() {
         _id: product._id,
         Title: product.Title,
         sPrice: product.sPrice,
+        Variant: product.Variant,
         Price: product.Price + product.sPrice,
         Image: product.Image,
         Quantity: product.Quantity + 1,
@@ -191,6 +195,7 @@ function App() {
         _id: product._id,
         Title: product.Title,
         sPrice: product.sPrice,
+        Variant: product.Variant,
         Price: product.Price - product.sPrice,
         Image: product.Image,
         Quantity: product.Quantity - 1,
@@ -261,6 +266,7 @@ function App() {
                   ImageURL={cartItem.Image}
                   Qty={cartItem.Quantity}
                   Title={cartItem.Title}
+                  Variant={cartItem.Variant}
                   PriceTag={cartItem.Price}
                   decrease={decreaseQty}
                   increase={increaseQty}
