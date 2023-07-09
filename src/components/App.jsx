@@ -200,7 +200,7 @@ function App() {
       const newArr = cart.map((i, index) => {
         return index === existingIndex ? newList : i;
       });
-      setStatus("success");
+      setStatus("warning");
       setNotiMsg(`${1}x ${product.Title} removed from cart.`);
       setShow(true);
       setTimeout(() => {

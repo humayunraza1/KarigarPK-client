@@ -4,8 +4,10 @@ import Button from "@mui/material/Button";
 import { grey } from "@mui/material/colors";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import Notification from "./notification";
 function ItemDetail(props) {
-  let [count, setCount] = useState(1);
+  const [count, setCount] = useState(1);
+  const [show, setShow] = useState(false);
   const item = props.moreInfo;
 
   function incrementQty() {
@@ -13,7 +15,10 @@ function ItemDetail(props) {
       if (prevCount + 1 <= item.Stock) {
         return prevCount + 1;
       } else {
-        alert("Item exceeded stock count");
+        setShow(true);
+        setTimeout(() => {
+          setShow(false);
+        }, 2000);
         return count;
       }
     });
@@ -32,6 +37,7 @@ function ItemDetail(props) {
 
   return (
     <>
+      {show && <Notification status="error" msg="Max quantity reached!" />}
       <div className="modal-container">
         <div id="modal">
           <div className="close-modal">
