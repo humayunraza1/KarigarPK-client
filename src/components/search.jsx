@@ -5,7 +5,7 @@ import { blue } from "@mui/material/colors";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchResult from "./searchResult";
 
-function Search({ cartLength, isCartOpen, onCart }) {
+function Search({ cartLength, isCartOpen, onSearch }) {
   const [results, setResults] = useState([]);
   function handleChange(e) {
     const { value } = e.target;
@@ -27,7 +27,7 @@ function Search({ cartLength, isCartOpen, onCart }) {
           <SearchIcon sx={{ fontSize: 27, color: blue[900] }} />
           <input placeholder="Search..." onChange={handleChange}></input>
         </div>
-        <SearchResult results={results} onCart={onCart} />
+        <SearchResult results={results} onSearch={onSearch} />
       </div>
       <div className="cart-container">
         <button

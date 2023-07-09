@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchResult({ results, onCart }) {
+function SearchResult({ results, onSearch }) {
   return (
     <div
       className="searchResults"
@@ -13,16 +13,20 @@ function SearchResult({ results, onCart }) {
               className="cartItem resultItem"
               key={index}
               _id={result._id}
-              onClick={() => onCart(result)}
+              onClick={() => {
+                onSearch(result);
+              }}
             >
               <div className="imgBox">
                 <img alt="product" src={result.ImageURL}></img>
               </div>
-              <div>
-                <h4>{result.Title}</h4>
-              </div>
-              <div>
-                <p>{result.Price}Rs</p>
+              <div className="result-content">
+                <div>
+                  <h4>{result.Title}</h4>
+                </div>
+                <div>
+                  <p>{result.Price}Rs</p>
+                </div>
               </div>
             </div>
           );

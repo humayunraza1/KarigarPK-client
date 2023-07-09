@@ -71,7 +71,7 @@ header {
   top: -50%;
   width: 100%;
   height: 100%;
-  background: #ffce00;
+  background: #fd9800;
   transform: skewY(345deg);
   transition: 0.5s;
   z-index: 2;
@@ -215,11 +215,12 @@ header {
   height: 40px;
   width: 150px;
   border-radius: 50px;
-  background-color: #ffce00;
+  background: #fd9800;
 }
 
 .btn button:hover {
-  background-color: #c59e00;
+  background: #c27400;
+
   cursor: pointer;
 }
 
@@ -355,7 +356,30 @@ header {
 }
 
 .resultItem {
-  background-color: bisque;
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.resultItem .imgBox,
+.resultItem .result-content {
+  z-index: 5;
+}
+
+.resultItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fd9800;
+  clip-path: circle(50px at 100% 10%);
+  transition: 0.5s ease-in-out;
+}
+
+.resultItem:hover::before {
+  clip-path: circle(280px at 80% -20%);
 }
 
 .total-container {
@@ -743,7 +767,7 @@ footer {
   left: 0;
   width: 100%;
   height: 50%;
-  background: #ffce00;
+  background: #fd9800;
   transform: skewY(345deg);
   z-index: 1;
 }
@@ -756,7 +780,7 @@ footer {
   border-radius: 100%;
   width: 28px;
   height: 28px;
-  background-color: #ffce00;
+  background: #fd9800;
   margin: 5px;
   text-align: center;
 }
@@ -770,7 +794,7 @@ footer {
 
 .AOC-container .setQuantity button:hover {
   cursor: pointer;
-  background-color: #e7ba07;
+  background: #d37f00;
 }
 
 .AOC-container .setQuantity {
@@ -786,7 +810,7 @@ footer {
 }
 
 .AOC-container .AOC-btn {
-  background-color: #ffce00;
+  background: #fd9800;
   border-radius: 8px;
   height: 35px;
   width: 110px;
@@ -795,7 +819,7 @@ footer {
 
 .AOC-container .AOC-btn:hover {
   cursor: pointer;
-  background-color: #e7ba07;
+  background: #be7200;
 }
 
 .setQty-Cart {
@@ -817,7 +841,7 @@ footer {
 
 .setQty-Cart .changeQty button {
   margin: 6px;
-  background-color: #ffce00;
+  background: #000000;
   border-radius: 100%;
   border-style: none;
   font-size: 18px;
@@ -826,9 +850,10 @@ footer {
   justify-content: center;
   align-items: center;
   height: 22px;
+  color: white;
 }
 
 .setQty-Cart .changeQty button:hover {
   cursor: pointer;
-  background-color: #e7ba07;
+  background: #222222;
 }

@@ -231,7 +231,7 @@ function App() {
           <Search
             cartLength={cart.length}
             isCartOpen={setCartVis}
-            onCart={openModal}
+            onSearch={openModal}
           />
         </div>
         {modal && <Overlay />}

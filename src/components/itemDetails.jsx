@@ -8,6 +8,7 @@ import Notification from "./notification";
 function ItemDetail(props) {
   const [count, setCount] = useState(1);
   const [show, setShow] = useState(false);
+  const [msg, setMsg] = useState("");
   const item = props.moreInfo;
 
   function incrementQty() {
@@ -15,6 +16,7 @@ function ItemDetail(props) {
       if (prevCount + 1 <= item.Stock) {
         return prevCount + 1;
       } else {
+        setMsg("Max Quantity Reached !");
         setShow(true);
         setTimeout(() => {
           setShow(false);
@@ -29,7 +31,11 @@ function ItemDetail(props) {
       if (prevCount - 1 >= 1) {
         return prevCount - 1;
       } else {
-        alert("Invalid Quantity");
+        setMsg("Invalid Quantity !");
+        setShow(true);
+        setTimeout(() => {
+          setShow(false);
+        }, 2000);
         return count;
       }
     });
@@ -37,7 +43,7 @@ function ItemDetail(props) {
 
   return (
     <>
-      {show && <Notification status="error" msg="Max quantity reached!" />}
+      {show && <Notification status="error" msg={msg} />}
       <div className="modal-container">
         <div id="modal">
           <div className="close-modal">

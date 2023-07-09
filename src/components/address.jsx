@@ -3,15 +3,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
 import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 import { green } from "@mui/material/colors";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import Notification from "./notification";
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 function Address(props) {
   const [name, setName] = useState("");
@@ -28,9 +23,9 @@ function Address(props) {
 
   const buttonSx = {
     ...(success && {
-      bgcolor: green[500],
+      bgcolor: "#fd9800",
       "&:hover": {
-        bgcolor: green[700],
+        bgcolor: "#fd9800",
       },
     }),
   };
@@ -240,7 +235,7 @@ function Address(props) {
           <div className="button-container">
             <Box sx={{ m: 1, position: "relative" }}>
               <Button
-                sx={buttonSx}
+                style={{ backgroundColor: "#fd9800" }}
                 variant="contained"
                 type="submit"
                 disabled={loading}
