@@ -11,7 +11,7 @@ import Overlay from "./overlay";
 import Footer from "./footer";
 import Notification from "./notification";
 import ItemDetail from "./itemDetails";
-
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartVis, setCartVis] = useState(false);
@@ -286,6 +286,7 @@ function App() {
         </section>
         <Footer />
       </div>
+      <Analytics />
     </>
   );
 }
