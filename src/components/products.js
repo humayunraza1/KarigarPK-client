@@ -48,33 +48,6 @@ const products = [
       "G Pro Wireless / G Pro X Grip made from Anti Slip and Anti Sweat material.",
   },
   {
-    _id: 6,
-    Title: "G402 Skates",
-    Variant: "Normal PTFE",
-    Price: 600,
-    Stock: 6,
-    ImageURL: "./Resources/g402-skates.png",
-    Description: "PTFE Skates, best for replacement",
-  },
-  {
-    _id: 7,
-    Title: "GPXS Skates",
-    Variant: "Normal PTFE",
-    Price: 650,
-    Stock: 0,
-    ImageURL: "./Resources/gpxs skate.png",
-    Description: "PTFE Skates, best for replacement",
-  },
-  {
-    _id: 8,
-    Title: "G502 Lightspeed Skates",
-    Variant: "Normal PTFE",
-    Price: 600,
-    Stock: 4,
-    ImageURL: "./Resources/g502-light-skates.png",
-    Description: "PTFE Skates, best for replacement",
-  },
-  {
     _id: 9,
     Title: "Viper Ultimate Grip",
     Variant: "Black Printstream",
@@ -145,8 +118,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 1,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g402-white.png",
     Description:
       "Universal G402 Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -156,8 +128,7 @@ const products = [
     Variant: "Black Printstream",
     Price: 900,
     Stock: 0,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g402-black.png",
     Description:
       "Universal G402 Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -167,8 +138,7 @@ const products = [
     Variant: "White Printstream",
     Price: 1200,
     Stock: 0,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/universal-white.png",
     Description:
       "Universal grip sheet made from Anti Slip and Anti Sweat Material. Can be used on mice or other item. Dimensions: 7cm x 10cm",
   },
@@ -178,8 +148,7 @@ const products = [
     Variant: "Black Printstream",
     Price: 1200,
     Stock: 0,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/universal-black.png",
     Description:
       "Universal grip sheet made from Anti Slip and Anti Sweat Material. Can be used on mice or other item. Dimensions: 7cm x 10cm",
   },
@@ -189,8 +158,7 @@ const products = [
     Variant: "Red Voltaic",
     Price: 1200,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/universal-red.png",
     Description:
       "Universal grip sheet made from Anti Slip and Anti Sweat Material. Can be used on mice or other item. Dimensions: 7cm x 10cm",
   },
@@ -289,12 +257,39 @@ const products = [
   },
   {
     _id: 30,
-    Title: "GPW SKates",
+    Title: "GPW Skates",
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 0,
     ImageURL:
       "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    Description: "PTFE Skates, best for replacement",
+  },
+  {
+    _id: 6,
+    Title: "G402 Skates",
+    Variant: "Normal PTFE",
+    Price: 600,
+    Stock: 6,
+    ImageURL: "./Resources/g402-skates.png",
+    Description: "PTFE Skates, best for replacement",
+  },
+  {
+    _id: 7,
+    Title: "GPXS Skates",
+    Variant: "Normal PTFE",
+    Price: 650,
+    Stock: 0,
+    ImageURL: "./Resources/gpxs skate.png",
+    Description: "PTFE Skates, best for replacement",
+  },
+  {
+    _id: 8,
+    Title: "G502 Lightspeed Skates",
+    Variant: "Normal PTFE",
+    Price: 600,
+    Stock: 4,
+    ImageURL: "./Resources/g502-light-skates.png",
     Description: "PTFE Skates, best for replacement",
   },
 ];
