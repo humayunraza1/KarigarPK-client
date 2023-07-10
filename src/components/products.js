@@ -168,8 +168,7 @@ const products = [
     Variant: "9mm",
     Price: 300,
     Stock: 10,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/ttc-9mm.png",
     Description:
       "Replacement scroll wheel encoder to fix scroll wheel issue. 9mm is for Viper Mini and others which use 9mm encoder.",
   },
@@ -179,8 +178,7 @@ const products = [
     Variant: "8mm",
     Price: 300,
     Stock: 3,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/ttc-8mm.png",
     Description:
       "Replacement scroll wheel encoder to fix scroll wheel issue. 8mm is for G Pro/ G Pro X and others which use 8mm encoder.",
   },
@@ -190,8 +188,7 @@ const products = [
     Variant: "White Dot",
     Price: 300,
     Stock: 6,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/huano-white.png",
     Description:
       "Replacement switches for gaming mice. Instantly fix your double click issue",
   },
@@ -201,8 +198,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/rival-300.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -211,8 +207,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/rival-600.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -221,8 +216,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/rival-500.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -231,8 +225,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 0,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/rival-310.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -241,8 +234,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 6,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g304-305-skates.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -251,8 +243,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 5,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g102-skates.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -261,8 +252,7 @@ const products = [
     Variant: "PTFE Skates",
     Price: 600,
     Stock: 0,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/gpw-skates.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
