@@ -5,8 +5,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/viper-mini-white.png",
     Description: "Viper Mini Grip made from Anti Slip and Anti Sweat material.",
   },
   {
@@ -15,8 +14,7 @@ const products = [
     Variant: "Black Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/viper-black.png",
     Description: "Viper Mini Grip made from Anti Slip and Anti Sweat material.",
   },
   {
@@ -25,8 +23,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 3,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/gpro-white.png",
     Description:
       "G Pro Wireless / G Pro X Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -36,8 +33,7 @@ const products = [
     Variant: "Black Printstream",
     Price: 900,
     Stock: 3,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/gpro-black.png",
     Description:
       "G Pro Wireless / G Pro X Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -47,8 +43,7 @@ const products = [
     Variant: "Red Voltalc",
     Price: 900,
     Stock: 3,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/gpro-red.png",
     Description:
       "G Pro Wireless / G Pro X Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -58,8 +53,7 @@ const products = [
     Variant: "Normal PTFE",
     Price: 600,
     Stock: 6,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g402-skates.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -68,8 +62,7 @@ const products = [
     Variant: "Normal PTFE",
     Price: 650,
     Stock: 0,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/gpxs skate.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -78,8 +71,7 @@ const products = [
     Variant: "Normal PTFE",
     Price: 600,
     Stock: 4,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g502-light-skates.png",
     Description: "PTFE Skates, best for replacement",
   },
   {
@@ -88,8 +80,7 @@ const products = [
     Variant: "Black Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/viper-black.png",
     Description:
       "Viper Ultimate Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -99,8 +90,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/viper-ultimate-white.png",
     Description:
       "Viper Ultimate Grip made from Anti Slip and Anti Sweat material.",
   },
@@ -110,8 +100,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g102-g304-white.png",
     Description: "G102 Grip made from Anti Slip and Anti Sweat material.",
   },
   {
@@ -120,8 +109,7 @@ const products = [
     Variant: "Red Voltalc",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g102-red.png",
     Description: "G102 Grip made from Anti Slip and Anti Sweat material.",
   },
   {
@@ -130,8 +118,7 @@ const products = [
     Variant: "Red Voltalc",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g304-red.png",
     Description: "G304 Grip made from Anti Slip and Anti Sweat material.",
   },
   {
@@ -140,8 +127,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g102-g304-white.png",
     Description: "G304 Grip made from Anti Slip and Anti Sweat material.",
   },
   {
@@ -150,8 +136,7 @@ const products = [
     Variant: "White Printstream",
     Price: 900,
     Stock: 2,
-    ImageURL:
-      "http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png",
+    ImageURL: "./Resources/g502-white.png",
     Description: "G502 Grip made from Anti Slip and Anti Sweat material.",
   },
   {

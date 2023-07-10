@@ -9,6 +9,7 @@ function Store(props) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const handlePageChange = (event, value) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setCurrentPage(value);
   };
 

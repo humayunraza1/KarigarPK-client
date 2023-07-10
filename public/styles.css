@@ -130,8 +130,8 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(20deg);
-  width: 270px;
+  transform: translate(-50%, -50%);
+  width: 230px;
 }
 
 .container .card-content .contentBx {
@@ -157,8 +157,7 @@ header {
 }
 
 .container .card-content .contentBx .price,
-.container .card-content .contentBx .btn,
-.container .card-content .contentBx .Var {
+.container .card-content .contentBx .btn {
   transition: 0.5s;
   opacity: 0;
   color: white;
@@ -183,8 +182,7 @@ header {
 }
 
 .container .card-content:hover .contentBx .price,
-.container .card-content:hover .contentBx .btn,
-.container .card-content:hover .contentBx .Var {
+.container .card-content:hover .contentBx .btn {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.4s;
