@@ -188,7 +188,7 @@ const products = [
     Variant: "White Dot",
     Price: 300,
     Stock: 6,
-    ImageURL: "./Resources/huano-white.png",
+    ImageURL: "./Resources/Huano-white.png",
     Description:
       "Replacement switches for gaming mice. Instantly fix your double click issue",
   },
