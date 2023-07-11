@@ -21,15 +21,6 @@ function Address(props) {
   const [status, setStatus] = useState("");
   const timer = useRef();
 
-  const buttonSx = {
-    ...(success && {
-      bgcolor: "#fd9800",
-      "&:hover": {
-        bgcolor: "#fd9800",
-      },
-    }),
-  };
-
   useEffect(() => {
     return () => {
       clearTimeout(timer.current);
@@ -189,7 +180,7 @@ function Address(props) {
               <tr>
                 <th>Qty</th>
                 <th className="center-column">Item</th>
-                <th>Rs</th>
+                <th>Price</th>
               </tr>
               {Summary.map((order) => {
                 return (

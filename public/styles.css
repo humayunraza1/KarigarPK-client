@@ -475,6 +475,10 @@ select {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .tools-container {
@@ -529,7 +533,7 @@ select {
 }
 
 .personalInfo-container {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   z-index: 30;

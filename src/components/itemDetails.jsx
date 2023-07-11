@@ -54,7 +54,7 @@ function ItemDetail(props) {
           <div className="content">
             <img src={item.ImageURL} alt={item.Title}></img>
             <h1>{item.Title}</h1>
-            <span>{item.Price}rs/piece</span>
+            <span>{item.Price}rs</span>
             <p>{item.Variant}</p>
             <p>{item.Description}</p>
             <div className="AOC-container">
