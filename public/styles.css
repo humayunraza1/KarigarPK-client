@@ -708,23 +708,6 @@ footer {
   background-color: #ccc;
 }
 
-#Layer_1 {
-  width: 20px;
-  margin-right: 10px;
-}
-
-.cls-1 {
-  fill: none;
-  stroke: #fff;
-  stroke-miterlimit: 10;
-  stroke-width: 32px;
-  transition: stroke 0.4s ease;
-}
-
-#Layer_1:hover .cls-1 {
-  stroke: rgb(255, 187, 0);
-}
-
 .payment-container ul {
   list-style: none;
   text-decoration: none;
