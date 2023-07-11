@@ -537,7 +537,7 @@ select {
   display: flex;
   flex-direction: column;
   z-index: 30;
-  background-color: #575757;
+  background-color: #111;
   padding: 20px;
   border-radius: 10px;
   top: 50%;
@@ -734,7 +734,7 @@ footer {
 
 .payment-container {
   padding: 10px;
-  background-color: #7c7c7c;
+  background-color: #3b3b3b;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -748,7 +748,7 @@ footer {
 @media screen and (max-width: 600px) {
   .personalInfo-container {
     width: 90%;
-    height: 100%;
+    height: auto;
   }
 }
 
