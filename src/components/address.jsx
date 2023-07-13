@@ -72,7 +72,7 @@ function Address(props) {
         setSuccess(false);
         setLoading(true);
       }
-      const res = await fetch("https://karigarpk-server.onrender.com/order", {
+      const res = await fetch("https://karigar-pk-server.vercel.app/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
